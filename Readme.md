@@ -7,18 +7,18 @@
 3. Abrir terminal do windows e executar comando:  `wsl --upgrade`
 
 ## Criar projeto
-2.1 - Criar nova pasta
-2.2 - Criar arquivo(s) do projeto. Ex.: main.py (projeto em Python)
-2.3 - criar arquivo Dockerfile
+1. Criar nova pasta
+2. Criar arquivo(s) do projeto. Ex.: main.py (projeto em Python)
+3. criar arquivo Dockerfile
 
 ## Criar uma imagem do Docker
-Quando seu código estiver pronto e o Dockerfile estiver escrito, tudo o que você precisa fazer é criar sua imagem para que contenha sua aplicação.
+Quando seu código estiver pronto e o Dockerfile estiver escrito, tudo o que você precisa fazer é criar sua imagem para que contenha sua aplicação:
 
 `docker build -t python-test .`
 
 A opção '-t' permite que você defina o nome de sua imagem. Em nosso caso, escolhemos 'python-test', mas você pode usar o nome que quiser.
 
-O ponto "." no final do comando indica o PATH em que se encontra o arquivo DockerFile
+O ponto "." no final do comando indica o PATH em que se encontra o arquivo DockerFile, neste caso, na raiz do projeto.
 
 ## Executar uma imagem do Docker / Containers
 Quando a imagem for criada, seu código estará pronto para ser lançado. E é a partir destas imagens que podemos criar o que chamamos de *CONTAINERS*. Que são as imagens *em execução*.
