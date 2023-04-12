@@ -29,7 +29,7 @@ Sempre que formos criar um container utilizaremos a sintaxe:
 
 `[image_name] = Nome da imagem que queremos que ele utilize`
 
-# Comandos Básicos
+## Comandos Básicos
 
 |Comando | Descrição |
 |--------| --------- |
@@ -43,3 +43,17 @@ Sempre que formos criar um container utilizaremos a sintaxe:
 |||
 | docker rmi {nome da imagem} | Remove imagens |
 | docker rm {ID do container} | Remove containers |
+
+## Docker Composer / Orquestrador de Containers
+
+Docker Compose é o orquestrador de containers da Docker. Através dele você pode trabalhar com vários containers de forma simultânea e integrada. A "regência" desta orquestra se dá através do arquivo chamado docker-compose, semelhante ao Dockerfile, escrito em YAML.
+
+Um Exemplo: Uma Aplicação/container que se interliga a outro que possui somente o banco de dados, volumes etc.
+
+Em resumo, utilizando o Docker Compose, em vez de o administrador executar o docker run na mão para cada container e subir os serviços separados, linkando os containers das aplicações manualmente, temos um único arquivo que vai fazer essa orquestração e vai subir os serviços/containers de uma só vez. Isso diminui a responsabilidade do Sysadmin ou do desenvolvedor de ter que gerenciar o deploy e se preocupar em rodar todos esses comandos para ter a sua aplicação rodando com todas as suas dependências.
+
+Para utilizar o docker-compose você precisa ter em mente que será necessário seguir essas três etapas:
+
+* Definir o ambiente necessário para sua aplicação utilizando um Dockerfile (que pode ser reproduzido em qualquer lugar que tenha Docker instalado);
+* Definir no arquivo .yml  quais serviços são essenciais para sua aplicação e a relação entre elas.
+* Executar o comando docker-compose up para que seu ambiente seja criado e configurado.
